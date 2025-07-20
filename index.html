@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Приложение для показаний</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div id="app-container">
+        <div id="header" class="header">
+            <h1 id="header-title">Загрузка...</h1>
+            <p id="header-address"></p>
+        </div>
+
+        <div class="content">
+            <div id="loader-container" class="page active">
+                <div class="loader"></div>
+            </div>
+            <div id="readings-container" class="page"></div>
+            <div id="profile-container" class="page"></div>
+            <div id="register-container" class="page"></div>
+            <div id="error-container" class="page"></div>
+        </div>
+    </div>
+    
+    <!-- НИЖНЕЕ МЕНЮ (ТАБЫ) -->
+    <div id="tab-bar" class="tab-bar hidden">
+        <button class="tab-button active" onclick="showPage('readings')">
+            <span>💧</span>
+            <p>Показания</p>
+        </button>
+        <button class="tab-button" onclick="showPage('profile')">
+            <span>👤</span>
+            <p>Профиль</p>
+        </button>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay hidden" >
+        <div class="modal-content ">
+            <h3 id="modal-title">Изменить Email</h3>
+            <p id="modal-text">Введите новый email или оставьте поле пустым, чтобы удалить его.</p>
+            <input type="email" id="modal-input" placeholder="user@example.com">
+            <div class="modal-buttons">
+                <button class="modal-button-cancel" onclick="closeModal()">Отмена</button>
+                <button class="modal-button-confirm" onclick="submitModal()">Сохранить</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
