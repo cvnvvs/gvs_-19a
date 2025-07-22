@@ -112,8 +112,8 @@ function renderAccountStep() {
     setHeader('Регистрация', 'Шаг 3: Верификация');
     document.getElementById('register-container').innerHTML = `
       <div class="form-step">
-        <p>Адрес найден! Введите ваш <b>6-значный лицевой счет</b>.</p>
-        <input type="number" id="account-input" placeholder="000000" maxlength="6" inputmode="numeric">
+         <p>Адрес найден! Введите ваш <b>лицевой счет</b>.</p>
+        <input type="number" id="account-input" placeholder="00000" inputmode="numeric">
       </div>`;
     tg.BackButton.show().onClick(handleBuildingSelect.bind(null, appState.regData.building));
     tg.MainButton.offClick(handleApartmentSubmit).onClick(handleAccountSubmit);
@@ -121,8 +121,8 @@ function renderAccountStep() {
 
 function handleAccountSubmit() {
     const account = document.getElementById('account-input').value.trim();
-    if (!account || !/^\d{6}$/.test(account)) {
-        tg.showAlert('Лицевой счет должен состоять из 6 цифр.');
+    if (!account || !/^\d{5,6}$/.test(account)) {
+        tg.showAlert('Лицевой счет должен содержать 5-6 цифр.');
         return;
     }
     appState.regData.account = account;
