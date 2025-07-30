@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://site.cvnvvs.ru'; 
+const API_BASE_URL = 'http://site.cvnvvs.ru'; 
 
 const tg = window.Telegram.WebApp;
 
