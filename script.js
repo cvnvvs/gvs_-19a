@@ -81,15 +81,15 @@ function handleBuildingSelect(building) {
     document.getElementById('register-container').innerHTML = `
       <div class="form-step">
         <p>Строение <b>${building}</b>. Введите номер квартиры:</p>
-        <input type="number" id="apartment-input" placeholder="45" inputmode="numeric">
+        <input type="text" id="apartment-input" placeholder="45, 1а, 12б," inputmode="text">
       </div>`;
     tg.MainButton.setText('Далее').show().onClick(handleApartmentSubmit);
 }
 
 async function handleApartmentSubmit() {
     const apartment = document.getElementById('apartment-input').value.trim();
-    if (!apartment || !/^\d+$/.test(apartment)) {
-        tg.showAlert('Введите корректный номер квартиры.');
+    if (!apartment || apartment.length > 6) {
+        tg.showAlert('Введите корректный номер квартиры (до 5 символов).');
         return;
     }
     appState.regData.apartment = apartment;
