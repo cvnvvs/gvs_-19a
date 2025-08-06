@@ -385,7 +385,7 @@ function renderProfilePage(data) {
               <div class="meter-card">
                 <h4>${m.meter_type === 'ГВС' ? '🔥' : '❄️'} ${m.meter_type} (№ ${m.factory_number})</h4>
                 <p><strong>Дата поверки:</strong> ${m.checkup_date}</p>
-                <p><strong>Показания (прошлый месяц) от ${date}:</strong> <code>${last}</code></p>
+                <p><strong>Показания (прошлый месяц) от ${m.meter_date}:</strong> <code>${last}</code></p>
                 <p><strong>Показания (текущий месяц):</strong> <code>${curr}</code></p>
                 <p><strong>Расход за текущий период:</strong> <code>${cons}</code></p>
               </div>`;
