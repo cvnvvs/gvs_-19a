@@ -81,7 +81,7 @@ function handleBuildingSelect(building) {
     document.getElementById('register-container').innerHTML = `
       <div class="form-step">
         <p>Строение <b>${building}</b>. Введите номер квартиры:</p>
-        <input type="text" id="apartment-input" placeholder="45, 1а, 12б," inputmode="text">
+        <input type="text" id="apartment-input" placeholder="45, 1а, 12б" inputmode="text">
       </div>`;
     tg.MainButton.setText('Далее').show().onClick(handleApartmentSubmit);
 }
