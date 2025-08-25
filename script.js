@@ -191,7 +191,7 @@ function renderPolicyStep() {
     tg.BackButton.show().onClick(renderContactsStep);
     const user = tg.initDataUnsafe.user;
     const userLogin = user.username ? `@${user.username}` : `ID: ${user.id}`;
-    const fullAddress = `Краснодарский край, г. Краснодар, пер. Краснодарский, д. ${appState.regData.building}, кв. ${appState.regData.apartment}`;
+    const fullAddress = `Хабаровский край, г. Хабаровск, пер. Краснодарский, д. ${appState.regData.building}, кв. ${appState.regData.apartment}`;
     const policyText = `
         Я, ${userLogin}, являясь потребителем жилищно‑коммунальных услуг по адресу: ${fullAddress}, 
         прошу осуществить мою авторизацию в телеграм‑приложении «ГВС ХВС» с целью дачи показаний по счётчикам ГВС и ХВС.<br><br>
